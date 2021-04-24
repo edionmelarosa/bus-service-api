@@ -1,6 +1,6 @@
 import { Controller, Get, Post, UseGuards } from '@nestjs/common';
-import { BusStop } from './busStop.entity';
-import { BusStopsService } from './buses.service';
+import { BusStop } from './bus-stop.entity';
+import { BusStopsService } from './bus-stops.service';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('busStops')

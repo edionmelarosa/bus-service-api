@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { BusStopRepository } from './busStop.repository';
-import { BusStopsService } from './buses.service';
-import { BusStopsController } from './busStops.controller';
+import { BusStopRepository } from './bus-stop.repository';
+import { BusStopsService } from './bus-stops.service';
+import { BusStopsController } from './bus-stops.controller';
 import { PassportModule } from '@nestjs/passport';
 
 @Module({

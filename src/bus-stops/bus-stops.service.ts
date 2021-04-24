@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BusStopRepository } from './busStop.repository';
-import { BusStop } from './busStop.entity';
+import { BusStopRepository } from './bus-stop.repository';
+import { BusStop } from './bus-stop.entity';
 
 @Injectable()
 export class BusStopsService {
@@ -11,7 +11,9 @@ export class BusStopsService {
   ){}
 
   async getAllBusStops(): Promise<BusStop[]> {
-    return await this.busStopRepository.find();
+    return await this.busStopRepository.find({
+      relations: ['buses']
+    });
   }
 
   async createBusStop(): Promise<BusStop> {

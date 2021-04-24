@@ -6,9 +6,6 @@ export class BusStop extends BaseEntity {
   @ObjectIdColumn()
   _id: string
 
-  @PrimaryGeneratedColumn()
-  id: number
-
   @Column()
   name: string
 
@@ -18,6 +15,6 @@ export class BusStop extends BaseEntity {
   @Column()
   lng: string
 
-  @OneToMany(() => Bus, bus => bus.busStop)
+  @Column(type => Bus)
   buses: Bus[]
 }

@@ -1,20 +1,20 @@
 import { BaseEntity, Column, Entity, ManyToOne, ObjectIdColumn, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { BusStop } from '../busStops/busStop.entity';
+import { BusStop } from '../bus-stops/bus-stop.entity';
 
 @Entity()
 export class Bus extends BaseEntity {
   @ObjectIdColumn()
-  _id: string
-
-  @PrimaryGeneratedColumn()
-  id: number
+  _id: string;
 
   @Column()
-  name: string
+  name: string;
 
   @Column()
-  arrivalTime: string
+  arrivalTime: string;
 
-  @ManyToOne(() => BusStop, busStop => busStop.buses)
-  busStop: BusStop
+  constructor(name: string, arrivalTime: string) {
+    super();
+    this.name = name;
+    this.arrivalTime = arrivalTime;
+  }
 }
