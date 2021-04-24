@@ -5,10 +5,12 @@ import { Bus } from './buses/bus.entity';
 import { BusStopsModule } from './busStops/busStops.module';
 import { BusStop } from './busStops/busStop.entity';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
+import { Application } from './auth/application.entity';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
+  ConfigModule.forRoot({
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
@@ -16,10 +18,11 @@ import { ConfigModule } from '@nestjs/config';
       url: process.env.DATABASE_URL,
       synchronize: true,
       useUnifiedTopology: true,
-      entities: [Bus, BusStop]
+      entities: [Bus, BusStop, Application]
     }),
     BusesModule,
-    BusStopsModule
+    BusStopsModule,
+    AuthModule
   ],
 })
 export class AppModule {}
