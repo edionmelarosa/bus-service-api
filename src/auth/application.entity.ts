@@ -1,4 +1,4 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, ObjectIdColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column,Entity, ObjectIdColumn, Unique } from "typeorm";
 
 @Entity()
 export class Application extends BaseEntity {
@@ -7,4 +7,8 @@ export class Application extends BaseEntity {
 
   @Column()
   name: string
+
+  @Unique(['username'])
+  @Column()
+  username: string
 }

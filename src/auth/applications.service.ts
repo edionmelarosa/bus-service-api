@@ -16,8 +16,8 @@ export class ApplicationsService {
 
   async signUp(signUpDto: SignUpDto): Promise<{accessToken: string}> {
     const application = await this.applicationRepository.signUp(signUpDto);
-    const {name} = application;
-    const payload: JwtPayload = { name }
+    const {name, username} = application;
+    const payload: JwtPayload = { name, username }
     const accessToken = await this.jwtService.sign(payload);
     return {accessToken}
   }

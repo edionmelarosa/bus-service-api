@@ -8,10 +8,11 @@ import { ApplicationsController } from './applications.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { ConfigModule } from '@nestjs/config';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+ConfigModule.forRoot(),
     PassportModule.register({defaultStrategy: 'jwt'}),
     JwtModule.register({
       secret: process.env.JWT_SECRET,
@@ -24,6 +25,7 @@ import { ConfigModule } from '@nestjs/config';
     ])
   ],
   controllers: [AuthController, ApplicationsController],
-  providers: [AuthService, ApplicationsService]
+  providers: [AuthService, ApplicationsService, JwtStrategy],
+  exports: [JwtStrategy, PassportModule]
 })
 export class AuthModule {}

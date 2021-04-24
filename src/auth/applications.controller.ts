@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { ApplicationsService } from './applications.service';
 import { SignUpDto } from './signup.dto';
 import { Application } from './application.entity';
@@ -10,6 +10,7 @@ export class ApplicationsController {
   ){}
 
   @Post('signup')
+  @UsePipes(ValidationPipe)
   async signup(@Body() signUpDto: SignUpDto): Promise<{accessToken: string}> {
     return await this.applicationsService.signUp(signUpDto);
   }
