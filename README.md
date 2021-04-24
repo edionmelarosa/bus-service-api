@@ -1,51 +1,40 @@
 # Bus Service App API
+An API for Bus Service application
 
-## Description
+## Technologies
+* Language: Nodejs
+* Framework: [Nest](https://github.com/nestjs/nest)
+* Database: Mongodb
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Requirements
+* You should have mongodb server running
 
 ## Installation
-
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
-
 ```bash
 # development
-$ npm run start
+$ yarn run start
 
 # watch mode
-$ npm run start:dev
+$ yarn run start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+## Register Application
+To use the API, you need to register the application.
+1) Register an application by sending `POST` request to `/applications/signup` with `name` param.
+```json
+ e.g params
+ {
+     "name": "Test Application"
+ }
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+This will then return a `token` which you can use to use the API.
+Note: This is not recommended in real application.
