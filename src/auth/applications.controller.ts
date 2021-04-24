@@ -10,7 +10,7 @@ export class ApplicationsController {
   ){}
 
   @Post('signup')
-  async signup(@Body() signUpDto: SignUpDto): Promise<Application> {
+  async signup(@Body() signUpDto: SignUpDto): Promise<{accessToken: string}> {
     return await this.applicationsService.signUp(signUpDto);
   }
 }

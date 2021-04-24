@@ -37,4 +37,4 @@ To use the API, you need to register the application.
 ```
 
 This will then return a `token` which you can use to use the API.
-Note: This is not recommended in real application.
+Note: This is not recommended in real application. Only for this  test project.
