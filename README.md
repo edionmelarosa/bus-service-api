@@ -45,3 +45,14 @@ To mock data, call:
  `POST`: `/mock-data` 
 
  This will create `busStops` and `buses` records to DB.
+
+ ## Data
+ ```javascript
+this.customerCoordinates = [103.837836, 1.334559]
+this.maxDistanceInMeter = 200;
+```
+
+## Routes
+`POST` `/mock-data` - Mock bus stops and buses.
+`GET` `/bus-stops` - Get all bus stops  and its buses.
+`GET` `/bus-stops/{id}` - Get nearest bus stops and its buses within `200m`.
