@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, ObjectIdColumn, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ObjectIdColumn} from "typeorm";
 import { Bus } from '../buses/bus.entity';
 
 @Entity()
@@ -13,8 +13,17 @@ export class BusStop extends BaseEntity {
   lat: string
 
   @Column()
-  lng: string
+  long: string
 
   @Column(type => Bus)
   buses: Bus[]
+
+  constructor(name: string, lat: string, long: string, buses: Array<Bus>) {
+    super();
+
+    this.name = name;
+    this.lat = lat;
+    this.long = long;
+    this.buses = buses
+  }
 }

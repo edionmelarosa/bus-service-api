@@ -1,5 +1,6 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 import { MockDataService } from './mock-data.service';
+import { BusStop } from '../bus-stops/bus-stop.entity';
 
 @Controller('mock-data')
 export class MockDataController {
@@ -7,7 +8,8 @@ export class MockDataController {
     private mockDataService: MockDataService
   ){}
 
-  async mockData(): Promise<any> {
+  @Post()
+  async mockData(): Promise<BusStop[]> {
     return this.mockDataService.mockData();
   }
 }

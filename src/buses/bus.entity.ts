@@ -1,5 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne, ObjectIdColumn, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { BusStop } from '../bus-stops/bus-stop.entity';
+import { BaseEntity, Column, Entity, ObjectIdColumn } from "typeorm";
 
 @Entity()
 export class Bus extends BaseEntity {

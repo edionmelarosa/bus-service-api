@@ -5,18 +5,34 @@ import { BusStop } from './bus-stop.entity';
 
 @Injectable()
 export class BusStopsService {
+  private customerCoordinates;
+  private maxDistanceInMeter;
+
   constructor(
     @InjectRepository(BusStopRepository)
     private busStopRepository: BusStopRepository
-  ){}
-
-  async getAllBusStops(): Promise<BusStop[]> {
-    return await this.busStopRepository.find({
-      relations: ['buses']
-    });
+  ){
+    this.customerCoordinates = [103.837836, 1.334559]
+    this.maxDistanceInMeter = 200;
   }
 
-  async createBusStop(): Promise<BusStop> {
-    return await this.busStopRepository.createBusStop();
+  async getBusStop(id: string): Promise<BusStop> {
+    return await this.busStopRepository.findOne(id)
+  }
+
+  async getNearestBusStops(): Promise<BusStop[]> {
+    return await this.busStopRepository.find({
+      where: {
+        location: {
+          $near: {
+            $geometry: {
+               type: "Point" ,
+               coordinates: this.customerCoordinates
+            },
+            $maxDistance: this.maxDistanceInMeter
+          }
+        }
+      }
+    });
   }
 }
