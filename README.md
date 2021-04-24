@@ -32,9 +32,16 @@ To use the API, you need to register the application.
 ```json
  e.g params
  {
-     "name": "Test Application"
+     "name": "Test Application",
+     "username": "test-application" // unique
  }
 ```
 
 This will then return a `token` which you can use to use the API.
 Note: This is not recommended in real application. Only for this  test project.
+
+## Mocking Bus Stop and Buses Data 
+To mock data, call:
+ `POST`: `/mock-data` 
+
+ This will create `busStops` and `buses` records to DB.
