@@ -1,7 +1,7 @@
 {
-  "name": "bus-service",
+  "name": "bus-service-api",
   "version": "0.0.1",
-  "description": "",
+  "description": "An API for bus service application",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
