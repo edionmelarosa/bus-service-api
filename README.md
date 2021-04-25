@@ -21,6 +21,8 @@ $ yarn run start
 
 # watch mode
 $ yarn run start:dev
+Runs the app in the development mode.\
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 # production mode
 $ yarn run start:prod
