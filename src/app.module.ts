@@ -16,7 +16,7 @@ import { MockDataModule } from './mock-data/mock-data.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: process.env.DATABASE_URL,
+      url: process.env.MONGODB_URI,
       synchronize: true,
       useUnifiedTopology: true,
       entities: [Bus, BusStop, Application]
