@@ -16,8 +16,8 @@ export class MockDataService {
           coordinates: [103.83972077425295, 1.335083707317516] // 216.73
         },
         buses: [
-          new Bus('Bus 1', '10:00,'),
-          new Bus('Bus 2', '10:10,')
+          new Bus('Bus 1', '10:00'),
+          new Bus('Bus 2', '11:10')
         ]
       },
       {
@@ -27,8 +27,8 @@ export class MockDataService {
           coordinates: [103.83770217768149, 1.3355637716640834] // 112.56
         },
         buses: [
-          new Bus('Bus 3', '10:00,'),
-          new Bus('Bus 4', '10:15,')
+          new Bus('Bus 3', '11:00'),
+          new Bus('Bus 4', '12:15')
         ]
       },
       {
@@ -38,8 +38,8 @@ export class MockDataService {
           coordinates: [103.8367773581069, 1.3340969080885703] // 126.54
         },
         buses: [
-          new Bus('Bus 5', '10:00,'),
-          new Bus('Bus 6', '10:15,')
+          new Bus('Bus 5', '12:00'),
+          new Bus('Bus 6', '12:15')
         ]
       },
       {
@@ -49,8 +49,8 @@ export class MockDataService {
           coordinates: [103.83611931340961, 1.3340613477486005] // 202.12
         },
         buses: [
-          new Bus('Bus 7', '10:00,'),
-          new Bus('Bus 8', '10:15,')
+          new Bus('Bus 7', '18:00'),
+          new Bus('Bus 8', '18:55')
         ]
       }
     ]
