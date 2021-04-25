@@ -53,6 +53,10 @@ this.maxDistanceInMeter = 200;
 ```
 
 ## Routes
-* `POST` `/mock-data` - Mock bus stops and buses.
+
+This is not authenticated routes only use for mocking. Not recommended for real application.
+* `POST` `/mock-data` - Mock bus stops and buses. 
+
+Authenticated routes
 * `GET` `/bus-stops` - Get all bus stops  and its buses.
 * `GET` `/bus-stops/{id}` - Get nearest bus stops and its buses within `200m`.
