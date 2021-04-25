@@ -62,3 +62,8 @@ This is not authenticated routes only use for mocking. Not recommended for real 
 Authenticated routes
 * `GET` `/bus-stops` - Get all bus stops  and its buses.
 * `GET` `/bus-stops/{id}` - Get nearest bus stops and its buses within `200m`.
+
+## Fix index error when pulling bus stops
+When you're experiencing this error when pulling a bus stops record, please try to execute this command `db.bus_stop.createIndex( { "location" : "2dsphere" } )` in your `mongo shell`.
+
+`planner returned error :: caused by :: unable to find index for $geoNear query`
